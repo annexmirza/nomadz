@@ -8,6 +8,7 @@ import 'regisrtation_pages/on_bording_screen.dart';
 import 'regisrtation_pages/setting_screen.dart';
 import 'view/home_exploring_screen.dart';
 import 'view/profile_menu/profile_menu_page.dart';
+import 'view/profile_menu/profile_message_screen.dart';
 import 'view/save_tabs.dart/news_nevigating_tab.dart';
 import 'view/save_tabs.dart/save_nav_tabs.dart';
 
@@ -35,5 +36,5 @@ class MyApp extends StatelessWidget {
 }
 
 Widget landingPage() {
-  return ProfileMenuPage();
+  return ProfileMessagePage();
 }

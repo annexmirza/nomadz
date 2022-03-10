@@ -18,6 +18,17 @@ class ProfileMenuPage extends StatelessWidget {
               height: 60.h,
             ),
             Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: CustomText(
+                  text: "Profile",
+                  fontSize: 25.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.all(18.0),
               child: Row(
                 children: [
@@ -69,15 +80,14 @@ class ProfileMenuPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 500.h,
+                height: 390.h,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.red,
-                ),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(18.0),
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: CustomText(
@@ -87,30 +97,132 @@ class ProfileMenuPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomText(
-                            text: "Order",
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey[400],
-                          ),
-                          Icon(
-                            Icons.abc,
-                            color: Colors.grey[400],
-                          )
-                        ],
-                      ),
-                    )
+                    textandicon(
+                      text: "orders",
+                      icon: Icons.shopping_cart_checkout_outlined,
+                    ),
+                    textandicon(
+                      text: "Received Offers",
+                      icon: Icons.arrow_downward_sharp,
+                    ),
+                    textandtext(text: "Adventure Listings", lasttext: "(0)"),
+                    textandtext(text: "Rental Listings", lasttext: "(0)"),
+                    textandtext(text: "Drafts", lasttext: "(0)"),
+                    textandicon(text: "Shop Settings", icon: Icons.home_filled),
                   ],
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 440.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: CustomText(
+                          text: "My Account",
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    textandicon(text: "Messages", icon: Icons.message),
+                    textandicon(
+                      text: "Purchases",
+                      icon: Icons.shopping_cart_checkout_outlined,
+                    ),
+                    textandicon(
+                      text: "Sent Offers",
+                      icon: Icons.arrow_upward_rounded,
+                    ),
+                    textandicon(
+                      text: "Address Book",
+                      icon: Icons.location_on,
+                    ),
+                    textandicon(
+                      text: "Payment Methods",
+                      icon: Icons.payment,
+                    ),
+                    textandicon(text: "Settings", icon: Icons.settings),
+                    textandicon(text: "Help Center", icon: Icons.help),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              height: 90.h,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20), color: Colors.white),
+              child: textandicon(text: "Logout", icon: Icons.logout),
+            )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class textandicon extends StatelessWidget {
+  String text;
+  IconData icon;
+  textandicon({required this.icon, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomText(
+            text: text,
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.grey,
+          ),
+          Icon(
+            icon,
+            color: Colors.black,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class textandtext extends StatelessWidget {
+  String text;
+  String lasttext;
+
+  textandtext({required this.lasttext, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomText(
+            text: text,
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.grey,
+          ),
+          CustomText(
+            text: lasttext,
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.grey[400],
+          ),
+        ],
       ),
     );
   }
