@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:nomadz/view/cart_screen.dart';
+import 'package:nomadz/view/checkout_screens/chechout_screen.dart';
+import 'package:nomadz/view/checkout_screens/payment_method_screen.dart';
+import 'package:nomadz/view/checkout_screens/shipping_address.dart';
+import 'package:nomadz/view/review_screen.dart';
 import 'package:nomadz/view/save_tabs.dart/save_llst_screen.dart';
 import 'package:nomadz/view/save_tabs.dart/save_tab.dart';
 
@@ -36,5 +41,5 @@ class MyApp extends StatelessWidget {
 }
 
 Widget landingPage() {
-  return ProfileMessagePage();
+  return CartScreen();
 }
